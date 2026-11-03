@@ -1,0 +1,21 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Check the optional history item and date fields,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Log into CareFlow with Generate Care Plan access and open Generate Care Plan > Additional Items for a patient with Intensity/Touch Level history.,Intensity/Touch Level History is available as an optional checkbox below Intensity/Touch Level.,,,
+,,,2,Select the Intensity/Touch Level History checkbox.,From and To date fields are displayed and allow the user to select a date range.,,,
+,Test Case,Check the default date range and three-year limit,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Open Generate Care Plan > Additional Items for a patient with history spanning more than three years and select Intensity/Touch Level History.,From and To default to the available three-year range. A message informs the user that up to three years of history is available.,,,
+,,,2,Modify From and To to a shorter range within the available period.,The selected dates are accepted and remain available for Care Plan generation.,,,
+,,,3,Attempt to select a From or To date outside the available three-year range using the date picker and direct entry if supported.,Dates outside the available range cannot be used to generate the history.,,,
+,Test Case,Check generated history respects the selected date range,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Use a patient with known history records inside and outside a chosen date range within the last three years. Open Generate Care Plan and select Intensity/Touch Level History.,The history option is selected and From and To fields are available.,,,
+,,,2,Set From and To to the chosen date range and generate the Care Plan.,The generated Care Plan includes all expected Intensity/Touch Level history records within the selected range and excludes records outside it.,,,
+,,,3,Generate another Care Plan using the default three-year range for a patient with records both within that range and older than three years.,History within the available three-year range is included. Records older than that range are excluded.,,,
+,Test Case,Check history section location and record details,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Generate a Care Plan including Care Management Programs and Intensity/Touch Level History for a range containing known records with and without comments.,An Intensity/Touch Level History section appears below Care Management Programs.,,,
+,,,2,Compare the history table with the patient's source history records.,"The table displays Change Date, Changed By, Touch Level Change, and Comments. Dates, users, and Touch Level changes match the source records.",,,
+,,,3,Check one record with a comment and one without a comment.,The entered comment appears in the Comments column. The record without a comment displays --.,,,
+,Test Case,Check history is omitted when not selected,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Open Generate Care Plan > Additional Items for a patient with history. Select Intensity/Touch Level History and then clear its checkbox.,Intensity/Touch Level History is not selected for inclusion.,,,
+,,,2,Generate and view the Care Plan.,The Care Plan does not include an Intensity/Touch Level History section or its records.,,,
+,Test Case,Check current Low Touch text at the top of the Care Plan,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Use a patient whose current intensity level is Low Touch and generate a Care Plan with the current intensity level included.,The top of the Care Plan displays Current Intensity Level: Low Touch instead of the standalone text Low Touch.,,,

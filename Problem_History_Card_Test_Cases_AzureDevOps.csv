@@ -1,0 +1,37 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Check problem card placement and appearance,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,Sign in as a care team member and navigate to PGI & Notes > View Closed/Voided/Dismissed PGIs.,The closed/voided/dismissed PGI view is displayed.,,,
+,,,2,Set the Status filter to Closed and click See History on a problem.,The Problem History modal displays a standalone white problem card above the search bar and history table.,,,
+,,,3,Compare the problem card placement and styling with the card in the Intervention History modal.,The card position and styling match the Intervention History modal.,,,
+,,,4,Close the modal and repeat using the Voided (from Open) filter and a voided problem.,The voided problem card appears in the same position and style above the search bar and history table.,,,
+,Test Case,Check collapsed problem card content and current status,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open See History for a problem with known details and a Proposed Resolution Date.,The card is collapsed by default with a show more link. Created by and Created Date/Time and Patient Friendly Description are hidden.,,,
+,,,2,Compare the collapsed card with the selected problem's known details and the Open Problems card format.,"The correct domain/category, priority, title, and individualized description appear. The Proposed line reads Proposed: [date] | Closed in the Open Problems card format.",,,
+,,,3,Close the modal and repeat for a problem selected using Voided (from Open).,The card is collapsed by default and displays the selected problem's correct details. The Proposed line reads Proposed: [date] | Voided.,,,
+,Test Case,Check missing Proposed Resolution Date,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open See History for a problem without a Proposed Resolution Date.,The card displays Proposed: Not available | Closed.,,,
+,,,2,Close the modal and repeat using Voided (from Open) for a problem without a Proposed Resolution Date.,The card displays Proposed: Not available | Voided.,,,
+,Test Case,Check problem card expand and collapse,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open a problem's See History. Click show more.,"The card expands and the link changes to show less. Accurate Created by, Created Date/Time, and Patient Friendly Description appear using existing Open Problems formatting.",,,
+,,,2,Click show less.,The additional fields are hidden. Collapsed content remains visible and the link changes back to show more.,,,
+,,,3,Repeat the expand and collapse steps for a problem selected using Voided (from Open).,The same expand/collapse behavior and accurate additional details are displayed for the voided problem.,,,
+,Test Case,Check selected problem details and collapsed state on reopening,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open problem A's See History. Expand the card and close the modal.,The expanded modal closes.,,,
+,,,2,Reopen problem A's history.,The card opens collapsed and the card and history show problem A's details.,,,
+,,,3,Close the modal and open problem B with different details under the same filter.,The card opens collapsed. Both card and history belong to problem B with no stale content from problem A.,,,
+,,,4,Close the modal and switch to Voided (from Open). Open problem C's history.,The card opens collapsed. Both card and history belong to problem C and the card status is Voided with no stale Closed status.,,,
+,Test Case,Check status transition and reason appear only in history,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open history for a problem closed from In Progress with reason No longer applies. Inspect both card states and the table.,The card shows current status Closed without the previous status or transition or close reason. The history table records In Progress to Closed and Status Reason changing from blank to No longer applies using existing table presentation.,,,
+,,,2,Close the modal and filter by Voided (from Open). Open history for a problem voided from In Progress with reason Manual entry error. Inspect both card states and the table.,The card shows current status Voided without the previous status or transition or void reason. The history table records In Progress to Voided and Status Reason changing from blank to Manual entry error using existing table presentation.,,,
+,Test Case,Check history search and sorting remain unchanged when toggling the card,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open history for a problem with known history entries.,"The Change Date, Changed By, Field, and Change columns and all expected entries retain their existing values and formatting.",,,
+,,,2,Search for a value present in the history and then a value not present. Clear the search.,Matching records are shown for the matching search. Existing no-results behavior is retained for the unmatched search. Clearing search restores all records. The problem card remains visible.,,,
+,,,3,Exercise each currently sortable column in both supported directions.,Records sort as before without changing row data or card content.,,,
+,,,4,Apply a matching search and a supported sort order. Expand and collapse the problem card.,"Search text, matching results, and sort order are preserved. Search and table remain usable.",,,
+,,,5,Repeat these checks for a problem selected using Voided (from Open).,"History entries, search, sorting, and state preservation behave identically for the voided problem.",,,
+,Test Case,Check long content and history scrolling and Close button,,,,Care Management,Varalakshmi Chittimanni <Varalakshmi.Chittimanni@healthcatalyst.com>,Design
+,,,1,"From PGI & Notes > View Closed/Voided/Dismissed PGIs filter by Closed and open history for a problem with a long title, long descriptions, and extensive history.",The card follows existing Open Problems wrapping/truncation behavior without overlapping the search bar or history table.,,,
+,,,2,Expand and collapse the card and scroll through the long history.,Content remains readable in both states. Modal scrolling matches Intervention History behavior and the Close button remains accessible.,,,
+,,,3,Click Close.,The modal closes and returns to the underlying PGI view.,,,
+,,,4,Reopen the modal and expand the card. Scroll and click Close.,Close remains accessible and closes the expanded modal.,,,
+,,,5,Repeat these checks for a problem selected using Voided (from Open).,"Long content, scrolling, and Close behave consistently for the voided problem.",,,

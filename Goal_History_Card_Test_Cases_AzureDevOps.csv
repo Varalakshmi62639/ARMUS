@@ -1,0 +1,56 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Check close goal modal and close reason options,,,,Care Management,,Design
+,,,1,Sign in as a care team member and navigate to PGI & Notes > Goals > Open.,The Open Goals list is displayed.,,,
+,,,2,Click the close goal icon on an open goal.,The Close Goal modal opens for the selected goal.,,,
+,,,3,Open the Close Reason dropdown and review its options.,"The dropdown lists exactly: Deceased, Met/Resolved, No longer applies, and Patient did not want to complete.",,,
+,,,4,Attempt to close the goal without selecting a Close Reason.,The goal is not closed and the required Close Reason is indicated.,,,
+,,,5,"Select a Close Reason, enter a Supporting Rationale, and confirm closing the goal.",The goal is closed and the selected reason and Supporting Rationale are saved.,,,
+,Test Case,Check closed and voided goal status filters and See History,,,,Care Management,,Design
+,,,1,"From PGI & Notes, open View Closed/Voided/Dismissed PGIs and set Status to Closed.",The list shows closed goals.,,,
+,,,2,Expand a closed goal using the + icon.,The expanded item shows the See History icon.,,,
+,,,3,Set Status to Voided (from Open).,The list shows goals voided from Open.,,,
+,,,4,Expand a voided goal using the + icon.,The expanded item shows the See History icon.,,,
+,Test Case,Check goal card placement and appearance,,,,Care Management,,Design
+,,,1,"In View Closed/Voided/Dismissed PGIs, set Status to Closed and click See History for a closed goal.",The Goal History modal opens with the goal card above the search bar and history table.,,,
+,,,2,Compare the goal card position and styling with the cards in the Intervention and Problem History modals.,The goal card uses the same position and style as the cards in the Intervention and Problem History modals.,,,
+,,,3,Close the modal and open See History for a goal under Voided (from Open).,The voided goal's card appears above the search bar and history table with consistent styling.,,,
+,Test Case,Check collapsed goal card content and current status,,,,Care Management,,Design
+,,,1,"Open Goal History for a closed goal with known category, priority, title, individualized description, and Target Date.","The card is collapsed by default and shows the correct domain/category label, priority, title, individualized description, and Target Date: [date] | Closed. Expanded-only details are hidden.",,,
+,,,2,Open Goal History for a goal voided from Open with known details and Target Date.,The collapsed card shows that goal's details and Target Date: [date] | Voided.,,,
+,,,3,Compare each card's content with its goal card in the Open Goals list.,"The card content matches the corresponding Open Goals card, with status reflecting the goal's current state.",,,
+,,,4,Inspect the card for the previous status and the close or void reason.,The card shows neither the previous status nor the close or void reason; those details are available only in the history table.,,,
+,Test Case,Check goal card when Target Date is unavailable,,,,Care Management,,Design
+,,,1,Open Goal History for a closed goal without a Target Date.,The card displays Target Date: Not available | Closed.,,,
+,,,2,Open Goal History for a goal voided from Open without a Target Date.,The card displays Target Date: Not available | Voided.,,,
+,Test Case,Check long domain or category label truncation,,,,Care Management,,Design
+,,,1,Open Goal History for a closed goal with a domain/category label long enough to be truncated.,The label is truncated with an ellipsis using the same behavior as on the Open Goals card.,,,
+,,,2,Compare the card's label with the same goal in the Open Goals list.,The label truncation is consistent and does not overlap or obscure other card content.,,,
+,Test Case,Check goal card expand and collapse,,,,Care Management,,Design
+,,,1,Open Goal History and click show more.,"The card expands, Created by, Created Date/Time, and Patient Friendly Description appear, and the link changes to show less.",,,
+,,,2,Click show less.,The expanded details are hidden and the link changes back to show more.,,,
+,,,3,Expand and collapse the card while observing the search bar and history table.,The search bar and history table remain visible and usable and retain their state.,,,
+,Test Case,Check correct goal card and collapsed state when reopening history,,,,Care Management,,Design
+,,,1,"Open a goal's history, expand its card, and close the modal.",The modal closes.,,,
+,,,2,Reopen the same goal's history.,The card is collapsed by default and displays the selected goal's details.,,,
+,,,3,Close the modal and open history for a different goal with different details.,The card and history show the newly selected goal with no stale content from the previous goal.,,,
+,,,4,Open history for a voided goal after viewing a closed goal.,The card is collapsed and shows the selected goal's details and current Voided status.,,,
+,Test Case,Check closing and voiding changes appear in the history table,,,,Care Management,,Design
+,,,1,Open history for a goal closed from In Progress with a known close reason and Supporting Rationale.,"The table has Change Date, Changed By, Field, and Change columns and records the person and date/time of closing.",,,
+,,,2,Inspect the closing entries in the history table.,"The table records Status (In Progress to Closed), Status Reason with the selected close reason, and Supporting Rationale with the saved rationale.",,,
+,,,3,Open history for a goal voided from Open with a known void reason and Supporting Rationale.,"The table records the person and date/time of voiding, Status (In Progress to Voided), Status Reason with the void reason, and Supporting Rationale with the saved rationale.",,,
+,,,4,Inspect the closed and voided goal cards while comparing them with the history entries.,"The cards show only the current Closed or Voided status; the previous status, reason, and rationale are in the history table.",,,
+,Test Case,Check goal changes before closure or voiding and no later edits,,,,Care Management,,Design
+,,,1,"Use a goal with known changes made before closure or voiding, including a Status change and a Target Date change, then open its history.","Each pre-terminal change appears with its changed field and change, the person who made it, and the date and time.",,,
+,,,2,Inspect the history through the closing or voiding event.,"The table includes the changes from creation through closure or voiding, including Status, Status Reason, and Supporting Rationale for the terminal event.",,,
+,,,3,Attempt to edit the closed or voided goal after opening its history.,The closed or voided goal cannot be edited.,,,
+,,,4,Refresh or reopen its history after the attempted edit.,No change is recorded after the goal's closing or voiding event.,,,
+,Test Case,Check goal history search and column sorting,,,,Care Management,,Design
+,,,1,Open Goal History for a goal with known history entries.,"The table displays Change Date, Changed By, Field, and Change.",,,
+,,,2,Search for a value present in the history and then for a value with no matching entries. Clear the search.,Matching entries are shown for the matching search; existing no-results behavior is shown for the unmatched search; clearing search restores all entries.,,,
+,,,3,Sort each sortable column in both supported directions.,The table sorts as it does in the Intervention and Problem History modals without changing row data.,,,
+,,,4,"Apply a search and sort, then expand and collapse the goal card.","The search text, matching results, and sort order are preserved; the search and table remain usable.",,,
+,Test Case,Check long history scrolling and Close button,,,,Care Management,,Design
+,,,1,"Open Goal History for a goal with long content and enough history entries to require scrolling.",The card and history remain readable and the modal scrolls when needed.,,,
+,,,2,Scroll through the history table.,The Close button remains accessible.,,,
+,,,3,Click Close.,The modal closes and returns to the underlying PGI view.,,,
+,,,4,"Reopen the modal, expand the card, and scroll through the long history.",The Close button remains accessible and closes the expanded modal.,,,

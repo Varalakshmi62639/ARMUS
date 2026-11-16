@@ -1,0 +1,54 @@
+ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+,Test Case,Check close activity flow and confirmation,,,,Care Management,,Design
+,,,1,Sign in as a care team member and navigate to PGI &amp; Notes > Activities > Open.,The Open Activities list is displayed.,,,
+,,,2,Click the close activity icon on an open activity.,The close activity dialog opens for the selected activity.,,,
+,,,3,Attempt to save without selecting a close reason.,The activity is not closed and the required close reason is indicated.,,,
+,,,4,Select a close reason and enter the Supporting Rationale.,The selected reason and Supporting Rationale are entered.,,,
+,,,5,Save the close dialog.,The activity is closed and a confirmation notification appears in the top-right corner stating that the activity was successfully closed.,,,
+,,,6,Check the Open Activities list.,The closed activity no longer appears in the Open list.,,,
+,Test Case,Check closed and voided activity filters and See History,,,,Care Management,,Design
+,,,1,"From PGI &amp; Notes, open View Closed/Voided/Dismissed PGIs and set Status to Closed.",The list shows closed activities.,,,
+,,,2,Expand a closed activity using the + icon.,The expanded item shows the See History icon.,,,
+,,,3,Set Status to Voided (from Open).,The list shows activities voided from Open.,,,
+,,,4,Expand a voided activity using the + icon.,The expanded item shows the See History icon.,,,
+,Test Case,Check Activity History card placement and appearance,,,,Care Management,,Design
+,,,1,"In View Closed/Voided/Dismissed PGIs, set Status to Closed and click See History for a closed activity.",The Activity History modal opens with the activity card above the search bar and history table.,,,
+,,,2,Compare the card's position and styling with the cards in the Intervention and Problem History modals.,The activity card uses the same position and style as those history cards.,,,
+,,,3,Close the modal and open See History for a voided activity.,The voided activity's card appears above the search bar and history table with consistent styling.,,,
+,Test Case,Check collapsed activity card content,,,,Care Management,,Design
+,,,1,"Open Activity History for a closed activity with a category label, priority, title, Start Date, and Due date.",The card is collapsed by default and shows the correct category label, priority, title, and Start Date | Due date. Expanded-only details are hidden.,,,
+,,,2,Open Activity History for a voided activity with known activity details.,The collapsed card shows that activity's category label when present, priority, title, and Start Date | Due date.,,,
+,,,3,Compare each card's details with the corresponding activity card in the Open Activities list.,The displayed activity details match the Open Activities card.,,,
+,,,4,Inspect the card for a status or close/void reason.,The card shows neither a status nor a close/void reason; terminal changes appear in the history table.,,,
+,Test Case,Check activity card when category label is absent,,,,Care Management,,Design
+,,,1,Open Activity History for an activity without a category label.,The collapsed card shows priority, title, and Start Date | Due date without an empty category label.,,,
+,Test Case,Check activity card expand and collapse details,,,,Care Management,,Design
+,,,1,Open Activity History and click show more.,"The card expands, Created by, Created Date/Time, and Instructions appear, and the link changes to show less.",,,
+,,,2,For an activity with a source, inspect the expanded card.,The Source(s) line shows the source name followed by a clickable (reason) link.,,,
+,,,3,Hover over the (reason) link.,A tooltip displays the source reason.,,,
+,,,4,For an activity without a source, inspect the expanded card.,The Source(s) line is not shown.,,,
+,,,5,Click show less.,The expanded details are hidden and the link changes back to show more.,,,
+,,,6,Expand and collapse the card while observing the search bar and history table.,The search bar and history table remain visible and usable.,,,
+,Test Case,Check selected activity card and default state when reopening history,,,,Care Management,,Design
+,,,1,"Open an activity's history, expand its card, and close the modal.",The modal closes.,,,
+,,,2,Reopen the same activity's history.,The card is collapsed by default and shows the selected activity's details.,,,
+,,,3,Close the modal and open history for a different activity with different details.,The card and history show the newly selected activity with no stale content from the previous activity.,,,
+,Test Case,Check closing and voiding changes in activity history,,,,Care Management,,Design
+,,,1,Open history for an activity closed from In Progress with a known close reason and Supporting Rationale.,"The table has Change Date, Changed By, Field, and Change columns, and records the person who closed the activity and the date and time of closing.",,,
+,,,2,Inspect the closing entries in the history table.,"The table records Status (In Progress → Closed), Status Reason with the selected close reason, and Supporting Rationale with the saved rationale.",,,
+,,,3,Open history for an activity voided from Open with a known void reason and Supporting Rationale.,"The table records the person who voided the activity and the date and time of voiding, plus Status (In Progress → Voided), Status Reason with the void reason, and Supporting Rationale.",,,
+,Test Case,Check activity changes before and after closing or voiding,,,,Care Management,,Design
+,,,1,"Use an activity with known changes made before closing or voiding, then open its history.",Each pre-terminal change appears with its changed field and change, the person who made it, and the date and time.,,,
+,,,2,Inspect the history through the closing or voiding event.,The table includes the changes from creation through the terminal event, including Status, Status Reason, and Supporting Rationale.,,,
+,,,3,Attempt to edit the closed or voided activity.,The closed or voided activity cannot be edited.,,,
+,,,4,Refresh or reopen its history after the attempted edit.,No changes are recorded after the closing or voiding event.,,,
+,Test Case,Check activity history search and column sorting,,,,Care Management,,Design
+,,,1,Open Activity History for an activity with known history entries.,The table displays Change Date, Changed By, Field, and Change.,,,
+,,,2,"Search for a value present in the history, then search for a value with no matching entries. Clear the search.",Matching entries appear for the matching search; the existing no-results behavior appears for the unmatched search; clearing the search restores all entries.,,,
+,,,3,Sort each sortable column in both supported directions.,The table sorts as it does in the Intervention and Problem History modals without changing row data.,,,
+,,,4,"Apply a search and sort, then expand and collapse the activity card.",The search text, matching results, and sort order are preserved; the search and table remain usable.,,,
+,Test Case,Check long activity history scrolling and Close button,,,,Care Management,,Design
+,,,1,"Open Activity History for an activity with long content and enough history entries to require scrolling.",The card and history remain readable and the modal scrolls when needed.,,,
+,,,2,Scroll through the history table.,The Close button remains accessible.,,,
+,,,3,Click Close.,The modal closes and returns to the underlying PGI view.,,,
+,,,4,"Reopen the modal, expand the card, and scroll through the long history.",The Close button remains accessible and closes the expanded modal.,,,
